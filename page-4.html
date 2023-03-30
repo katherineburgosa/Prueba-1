@@ -34,7 +34,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(800,600);
+  createCanvas(windowWidth, windowHeight);
     selectAll("a")[4].addClass("aqui");
   x = random(width);
   y = random(height);
@@ -77,10 +77,11 @@ if(y + dvd.height >= height) {
     y = 0;
     pickColor();
   }
-  
-   
+    
 }
-
+function windowResized(){
+    resizeCanvas(windowWidth, windowHeight);
+}
     </script>
   </body>
 </html>
