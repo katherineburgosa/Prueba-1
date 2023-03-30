@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>PAGE 2</title>
+        <link rel="icon" type="image" href="https://assets.stickpng.com/images/58afdad6829958a978a4a693.png"/>
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Katherine Burgos</a>
+            <a href="page-1.html">PRIMERO</a>
+            <a href="page-2.html">SEGUNDO</a>
+            <a href="page-3.html">TERCERO</a>
+            <a href="page-4.html">CUARTO</a>
+            
+        </nav>
+        <main>
+            <aside>
+            <h1>Red </h1>
+            <h2>Green </h2>
+            <h3>Blue </h3>
+        </aside>
+        </main>
+        <script>
+             var elSlider;
+            var elSegundo;
+            var elTercer;
+            
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                selectAll("a")[2].addClass("aqui");
+                var donde = select("h1");
+                elSlider = createSlider(0, 255, 0).parent(donde);
+                colorMode(RGB, 255, 255, 255);
+                var otro = select("h2")
+                elSegundo = createSlider(0, 255, 0).parent(otro);
+                var dos = select("h3")
+                elTercer = createSlider(0, 255, 0).parent(dos);
+                
+              
+            }
+
+            function draw() {
+                background(elSlider.value(), elSegundo.value(), elTercer.value());
+                fill(255);
+                text("R" + elSlider.value() +"  "+ "G" + elSegundo.value() + "  "+ "B" + elTercer.value() ,windowWidth-150,windowHeight-50);
+    
+            }
+            function windowResized(){
+                resizeCanvas(windowWidth, windowHeight);
+            }
+        </script>
+    </body>
+</html>
